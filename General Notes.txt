@@ -1,0 +1,30 @@
+Script won't run outside of Python because arguments/variables are not being piped in.
+
+InDesign document needs to be opened.
+
+MAYBE JUST FIND WAY TO UNDO INSTEAD OF REVERSE LOOPING THING GOING ON.
+
+Resumes are saved in order of links in jobs.csv.
+
+More than two placeholder replacements can be made to work.
+    - Add new array elements in line 41 of main.py
+    - Add new placeholder keywords in line 53 of cover-letters-generator.jsx
+
+    Whole script system won't error out if the lengths of 'jobs_List_Extracted' and
+    'placeholder' don't match. They just won't "line-up" right in the document and
+    some keywords won't change or seem go anywhere!
+    The order of  'jobs_List_Extracted' matches/pairs/"lines-up" with the order
+    of the placeholder keywords in 'placeholder' (jsx). And I just happened to
+    make the order of 'placeholder' array flow in the document.
+
+    Insert this code anywhere in main.py to fill more array elements in 'Jobs_CSV_Extracted'
+    when testing - works as placeholder (not be confused w/ variable) when not wanting
+    to pull more data in with the scraper!
+        import string
+        import random
+        def random_string(length):
+            return ''.join(random.choice(string.ascii_letters) for m in range(length))
+
+        EG: jobs_List_Extracted.extend([[random_string(5), random_string(3), jobTitle.get_text().strip(), jobCo.getText().strip()]]) #  Needs to be double-bracket to make list of lists
+        Source: https://stackoverflow.com/a/45416424
+            no xrange in Python 3 thus is 'range'  https://stackoverflow.com/a/95100
