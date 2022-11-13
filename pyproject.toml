@@ -4,6 +4,8 @@ version = "0.1.0"
 description = ""
 authors = ["B1zguy <6235689+B1zguy@users.noreply.github.com>"]
 readme = "README.md"
+# For when trying to get 'poetry run resumation' to work
+#packages = [     { include = "."}, ]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -15,3 +17,7 @@ click = "^8.1.3"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+# For when trying to get 'poetry run' to work
+#[tool.poetry.scripts]
+#resumation = "main.py:cli"

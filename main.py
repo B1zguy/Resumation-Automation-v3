@@ -85,12 +85,38 @@ def executeScript(exportdir: str, csvdir: str):
 
     return result.stdout, result.stderr  # Wanna see AppleScript console incase there are errors
 
-
+'''
 # pprint(scraping(jobsFile=Jobs_File))
 scraping(jobsFile=Jobs_File)
 pprint(executeScript(exportdir=Resume_Exports, csvdir=Jobs_CSV_Extracted))
 # executeScript(exportdir=Resume_Exports, csvdir=Jobs_CSV_Extracted)
+'''
 
+# There definitely is a better, Click-native manner, of implementing this logic
+# Spent too much time trying to work it so did this so I can move on.
+@click.command()
+@click.argument('jobs_export', type=str, required=False)
+def cli(jobs_export):
+    if jobs_export in ('jobs', 'export'):
+        click.echo("asdasd")
+
+        if jobs_export == "jobs":
+            click.echo("jobs")
+            scraping(jobsFile=Jobs_File)
+        else:
+            pprint(executeScript(exportdir=Resume_Exports, csvdir=Jobs_CSV_Extracted))
+    elif jobs_export is None:
+        scraping(jobsFile=Jobs_File)
+        pprint(executeScript(exportdir=Resume_Exports, csvdir=Jobs_CSV_Extracted))
+    else:
+        click.echo("Please provide 'jobs', 'export' or none/empty")
+
+'''@click.command(name='jobs')
+def jobs():
+    scraping(jobsFile=Jobs_File)'''
+
+if __name__ == '__main__':
+    cli()
 
 
 
