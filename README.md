@@ -77,6 +77,6 @@ Either run _main.py_ with Poetry:
 &emsp; &emsp;  3. &nbsp; Run `main.py export` to generate the PDFs.  
 &emsp; &emsp; &emsp; &emsp; &emsp; This step will not fetch new data!
 
-
+<br>
 
 Cover Letters can be found the _Resumes_ folder (which must pre-exist).
