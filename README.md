@@ -38,7 +38,9 @@ Re Poetry:
 I think I've realised I never needed it for this project yet just going to leave it in for now. Couldn't get 'poetry run resumation' to work but program will run with _poetry run python main.py_.
 
 ### Preparation
-Paste Seek URLs in `jobs.csv`. One each line.
+&emsp; &ndash; &nbsp; Open `resume-test.indd` in InDesign. Doublecheck the placeholders 'OPENING' and 'COMPANY' are written. Be mindful that the ExtendScript script will attempt to automate any open document.
+
+&emsp; &ndash; &nbsp; Paste Seek URLs in `jobs.csv`. One each line.
 
 ### To run
 
@@ -63,6 +65,8 @@ Either run _main.py_ with Poetry:
 &emsp; &emsp;  Run `main.py` without arguments. 
 
 &emsp; &emsp; This is the handsoff approach. It will fetch the data, fill in the placeholders and export the cover letters.
+
+<br>
 
 #### &emsp; &emsp; To edit '_job title_' & '_company_' prior to exporting
 
